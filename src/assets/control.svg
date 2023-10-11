@@ -1,0 +1,28 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    stroke-width="1" 
+    stroke="#000000" 
+    fill="none" 
+    stroke-linejoin="arcs" 
+    stroke-linecap="square" 
+    viewBox="0 0 24 24"> 
+    <g fill="none" 
+    fill-rule="evenodd">
+    <rect width="24" 
+    height="24" 
+    style="stroke:rgba(0,0,0,0)">
+    </rect>
+    <path d="M12,22 L12,18 L12,22 Z M12,14 L12,2 L12,
+    14 Z M19,6 L19,22 L19,6 Z M5,6 L5,22 L5,6 Z M7,
+    4 C7,5.104 6.104,6 5,6 C3.896,6 3,5.104 3,4 C3,
+    2.895 3.896,2 5,2 C6.104,2 7,2.895 7,4 Z M21,4 C21,
+    5.104 20.105,6 19,6 C17.896,6 17,5.104 17,4 C17,
+    2.895 17.896,2 19,2 C20.105,2 21,2.895 21,4 Z M10,
+    16 C10,17.104 10.896,18 12,18 C13.104,18 14,17.104 14,
+    16 C14,14.895 13.104,14 12,14 C10.896,14 10,14.895 10,
+    16 Z" stroke="#fff">
+    </path>
+    </g>
+</svg>
