@@ -28,6 +28,8 @@ const AddTask = ({ addTask }) => {
     const handleInputChange = (e) => {
         setNewItem(e.target.value);
       }
+
+    const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
     
       const handleAddItem = (e) => {
         e.preventDefault()
@@ -59,7 +61,7 @@ const AddTask = ({ addTask }) => {
 
 		const formData = {name, date, reminder, priority, actionItems:{actionItems}}
 
-        const response = await fetch('/api/tasks/', {
+        const response = await fetch(`${rootUrl}/api/tasks/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

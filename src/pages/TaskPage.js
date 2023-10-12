@@ -17,9 +17,12 @@ const TaskPage = ({ match }) => {
     const [selectedPriority, setSelectedPriority] = useState('');
     const navigate = useNavigate();
 
+    const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
+
     useEffect(() => {
         const getTask = async () => {
-            const res = await fetch(`/api/tasks/${TaskId}/`)
+            const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
+            const res = await fetch(`${rootUrl}/api/tasks/${TaskId}/`)
             const data = await res.json()
             setTask(data)
             //setActionItems(data.actionItems)
@@ -33,7 +36,7 @@ const TaskPage = ({ match }) => {
     
 
     const deleteActionitem = (itemId) => {
-        fetch(`/api/tasks/${TaskId}/actionitems/${itemId}`, {
+        fetch(`${rootUrl}/api/tasks/${TaskId}/actionitems/${itemId}`, {
             method: 'DELETE'
         })
         const updatedTaskData = { ...task };
@@ -47,7 +50,7 @@ const TaskPage = ({ match }) => {
     }
 
     const deleteTask = () => {
-        fetch(`/api/tasks/${TaskId}/`, {
+        fetch(`${rootUrl}/api/tasks/${TaskId}/`, {
             method: 'DELETE'
         })
         navigate('/');
@@ -56,7 +59,7 @@ const TaskPage = ({ match }) => {
     const handlePriorityChange = (priority) => {
         setSelectedPriority(priority)
     
-        fetch(`/api/tasks/${TaskId}/`, {
+        fetch(`${rootUrl}/api/tasks/${TaskId}/`, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json',
             },
@@ -107,7 +110,7 @@ const TaskPage = ({ match }) => {
         
 
 
-        await fetch(`/api/tasks/${TaskId}/actionitems/${itemId}`, {
+        await fetch(`${rootUrl}/api/tasks/${TaskId}/actionitems/${itemId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
