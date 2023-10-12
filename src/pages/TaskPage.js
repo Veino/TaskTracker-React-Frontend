@@ -17,11 +17,11 @@ const TaskPage = ({ match }) => {
     const [selectedPriority, setSelectedPriority] = useState('');
     const navigate = useNavigate();
 
-    const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
+    const rootUrl = "https://task-tracker-api-xxik.onrender.com"
 
     useEffect(() => {
         const getTask = async () => {
-            const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
+            
             const res = await fetch(`${rootUrl}/api/tasks/${TaskId}/`)
             const data = await res.json()
             setTask(data)

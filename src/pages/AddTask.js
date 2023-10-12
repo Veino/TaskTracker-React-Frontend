@@ -29,7 +29,7 @@ const AddTask = ({ addTask }) => {
         setNewItem(e.target.value);
       }
 
-    const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
+    const rootUrl = "https://task-tracker-api-xxik.onrender.com"
     
       const handleAddItem = (e) => {
         e.preventDefault()

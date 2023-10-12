@@ -12,15 +12,17 @@ const TasksListPage = () => {
     useEffect(() => {
         getTasks()
     }, [])
+
+    const rootUrl = "https://task-tracker-api-xxik.onrender.com"
     
     const getTasks = async () => {
-        const res = await fetch('https://task-tracker-api-xxik.onrender.com//api/tasks/')
+        const res = await fetch(`${rootUrl}/api/tasks/`)
         const data = await res.json()
         setTasks(data)
     }
 
     const delAllTask = () => {
-        fetch('https://task-tracker-api-xxik.onrender.com//api/tasks/', {
+        fetch(`${rootUrl}/api/tasks/`, {
             method: 'DELETE'
         })
         setTasks([]);
