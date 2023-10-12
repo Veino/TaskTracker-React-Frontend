@@ -9,21 +9,18 @@ const TasksListPage = () => {
     const [filteredTasks, setFilteredTasks] = useState([]);
     const [filterByPriority, setFilterByPriority] = useState('');
 
-    const rootUrl = process.env.NODE_ENV === "production" ? "https://task-tracker-api-xxik.onrender.com/" : ""
-
     useEffect(() => {
         getTasks()
     }, [])
     
-    
     const getTasks = async () => {
-        const res = await fetch(`${rootUrl}/api/tasks/`)
+        const res = await fetch('https://task-tracker-api-xxik.onrender.com//api/tasks/')
         const data = await res.json()
         setTasks(data)
     }
 
     const delAllTask = () => {
-        fetch(`${rootUrl}/api/tasks/`, {
+        fetch('https://task-tracker-api-xxik.onrender.com//api/tasks/', {
             method: 'DELETE'
         })
         setTasks([]);
